@@ -7,4 +7,4 @@ for i in range(4):
     print((a[i]+b[i])/2, end=' ')
 
 print()
-print((sum(a)+sum(b))/(len(a)+len(b)))
+print(round((sum(a)+sum(b))/(len(a)+len(b)),1))
