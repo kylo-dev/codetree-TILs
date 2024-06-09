@@ -5,4 +5,4 @@ def print_star(n):
     print_star(n - 1)
     print("HelloWorld")
 
-print_star(5)
+print_star(4)
