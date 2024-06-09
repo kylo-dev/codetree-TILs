@@ -5,4 +5,5 @@ def print_star(n):
     print_star(n - 1)
     print("HelloWorld")
 
-print_star(4)
+n = int(input())
+print_star(n)
