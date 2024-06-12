@@ -1,6 +1,6 @@
 m1, d1, m2, d2 = map(int, input().split())
 
-months = [0, 31, 28, 31, 30, 31, 30, 31, 30, 31, 30, 31, 30]
+months = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 day1 = 0
 day2 = 0
@@ -16,4 +16,4 @@ day2 += d2
 if (day2 - day1 == 0):
     print(1) 
 else:
-    print(day2 - day1)
+    print(day2 - day1 + 1)
