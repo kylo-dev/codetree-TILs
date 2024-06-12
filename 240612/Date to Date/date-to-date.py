@@ -13,4 +13,7 @@ for j in range(1, m2):
     day2 += months[j]
 day2 += d2
 
-print(day2 - day1)
+if (day2 - day1 == 0):
+    print(1) 
+else:
+    print(day2 - day1)
