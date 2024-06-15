@@ -17,4 +17,4 @@ if (cal_time > standard):
     print(week[cal_day % 7])
 else:
     cal_day = abs(cal_time - standard)
-    print(week[-cal_day])
+    print(week[-(cal_day%7)])
