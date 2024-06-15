@@ -12,9 +12,9 @@ for i in range(1, m1):
 for j in range(1, m2):
     cal_time += day[j]
 
-if (d2 > d1):
-    cal_day = d2 - d1
+if (cal_time > standard):
+    cal_day = cal_time - standard
     print(week[cal_day % 7])
 else:
-    cal_day = abs(d1 - d2)
+    cal_day = abs(cal_time - standard)
     print(week[-cal_day])
