@@ -4,4 +4,7 @@ standard = 11 * 24 * 60 + (11 * 60 + 11)
 
 cal_time = a * 24 * 60 + (b * 60 + c)
 
-print(cal_time - standard)
+if (a < 11 and b < 11 and c < 11):
+    print(-1)
+else:
+    print(cal_time - standard)
