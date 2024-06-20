@@ -1,6 +1,6 @@
 n = int(input())
 
-leng = [0 for _ in range(200)]
+leng = [0 for _ in range(201)]
 
 a_list = []
 for _ in range(n):
