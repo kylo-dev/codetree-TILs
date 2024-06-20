@@ -1,27 +1,22 @@
-a_list = []
+a_list = [list(map(int, input().split())) for _ in range(3)]
 
-square = [[0 for _ in range(2001)] for _ in range(2001)]
+min_x = min(a[0] for a in a_list)
+min_y = min(a[1] for a in a_list)
+max_x = min(a[2] for a in a_list)
+max_y = min(a[3] for a in a_list)
 
-for _ in range(3):
-    a_list.append(list(map(int, input().split())))
+shift_x = -min(0, min_x)
+shift_y = -min(0, min_y)
 
-min_num = min(min(a) for a in a_list)
-
-if (min_num < 0):
-    tol  = abs(min_num)
-    for a in a_list:
-        a[0] += tol
-        a[1] += tol
-        a[2] += tol
-        a[3] += tol
+square = [[0] * (2001) for _ in range(2001)]
 
 for i in range(2):
-    for x in range(a_list[i][0], a_list[i][2]):
-        for y in range(a_list[i][1], a_list[i][3]):
+    for x in range(a_list[i][0] + shift_x, a_list[i][2] + shift_x):
+        for y in range(a_list[i][1] + shift_y, a_list[i][3] + shift_y):
             square[x][y] = 1
 
-for x in range(a_list[2][0], a_list[2][2]):
-    for y in range(a_list[2][1], a_list[2][3]):
+for x in range(a_list[2][0] + shift_x, a_list[2][2] + shift_x):
+    for y in range(a_list[2][1] + shift_y, a_list[2][3] + shift_y):
         square[x][y] = 0
 
 print(sum(sum(s) for s in square))
