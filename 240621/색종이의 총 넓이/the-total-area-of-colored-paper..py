@@ -12,8 +12,8 @@ shift_x = -min(0, min_x)
 shift_y = -min(0, min_y)
 
 for a in a_list:
-    for x in range(a[0], a[0]+shift_x+8):
-        for y in range(a[1], a[1]+shift_y+8):
+    for x in range(a[0]+shift_x, a[0]+shift_x+8):
+        for y in range(a[1]+shift_y, a[1]+shift_y+8):
             square[x][y] = 1
 
 print(sum(sum(row) for row in square))
