@@ -1,16 +1,16 @@
 n = int(input())
-
-cnt = 0 
-cnt_list = []
-
 num_list = [int(input()) for _ in range(n)]
+
+max_cnt = 0
+cur_cnt = 0 
 
 for i in range(n):
     if (i == 0 or num_list[i] == num_list[i-1]):
-        cnt += 1
+        cur_cnt += 1
     else:
-        cnt_list.append(cnt)
-        cnt = 1
-cnt_list.append(cnt)
+        max_cnt = max(max_cnt, cur_cnt)
+        cur_cnt = 1
 
-print(max(cnt_list))
+max_cnt = max(max_cnt, cur_cnt)
+
+print(max_cnt)
