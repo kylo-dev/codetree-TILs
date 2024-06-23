@@ -13,4 +13,4 @@ for i in range(n):
         max_cnt = max(max_cnt, cur_cnt)
         cur_cnt = 1
 
-print(max_cnt)
+print(max(max_cnt, cur_cnt))
