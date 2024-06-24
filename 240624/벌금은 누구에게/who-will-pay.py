@@ -9,5 +9,5 @@ for i in range(m):
     if m_list[num] >= k:
         print(num)
 
-if not (max(m_list) > 3):
+if (max(m_list) > k):
     print(-1)
