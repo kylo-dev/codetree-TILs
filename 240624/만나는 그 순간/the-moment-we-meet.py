@@ -22,7 +22,7 @@ for i in range(m):
             m_list.append(m_list[-1] - 1)
 
 check = False
-for i in range(1, min(len(n_list), len(m_list)) + 1):
+for i in range(1, min(len(n_list), len(m_list))):
     if n_list[i] == m_list[i]:
         check = True
         print(i)
