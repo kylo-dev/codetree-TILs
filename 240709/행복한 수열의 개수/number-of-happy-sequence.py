@@ -1,23 +1,32 @@
 n, m = map(int, input().split())
-
 arr = [list(map(int, input().split())) for _ in range(n)]
 
-cnt = 0
+seq = []
+num_hap = 0
 
-for i in range(n):
-    n_cnt = 1
-    for j in range(n-1):
-        if arr[i][j] == arr[i][j+1]:
-            n_cnt += 1
-    if n_cnt >= m:
-        cnt += 1
+def is_happy():
+    con_cnt, max_cnt = 1, 1
+    for i in range(1, n):
+        if seq[i] == seq[i-1]:
+            con_cnt += 1
+        else:
+            con_cnt = 1
+        max_cnt = max(con_cnt, max_cnt)
     
-for i in range(n):
-    n_cnt = 1
-    for j in range(n-1):
-        if arr[j][i] == arr[j+1][i]:
-            n_cnt += 1
-    if n_cnt >= m:
-        cnt += 1
+    return max_cnt >= m
 
-print(cnt)
+# 가로
+for i in range(n):
+    seq = arr[i][:]
+
+    if is_happy():
+        num_hap += 1
+
+# 세로
+for i in range(n):
+    for j in range(n):
+        seq[j] = arr[j][i]
+    if is_happy():
+        num_hap += 1
+
+print(num_hap)
