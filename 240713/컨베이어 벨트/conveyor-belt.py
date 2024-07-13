@@ -5,9 +5,8 @@ se = se[0] + se[1]
 
 for _ in range(t):
     se = se[-1:] + se[:-1] 
-    
 
 for i in range(len(se)):
-    if (i == 3):
+    if (i == n):
         print()
     print(se[i], end=" ")
