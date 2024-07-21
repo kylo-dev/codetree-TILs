@@ -35,6 +35,6 @@ if n == 1:
 else:
     for i in range(k):
         r, c = rc[i][0], rc[i][1]
-        if arr[r][c] == 0:
-            total += bfs(r, c)
+        if arr[r-1][c-1] == 0:
+            total += bfs(r-1, c-1)
     print(total)
