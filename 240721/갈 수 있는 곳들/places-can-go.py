@@ -26,9 +26,12 @@ def bfs(x, y):
     return cnt
 
 total = 0
-for i in range(k):
-    r, c = rc[i][0], rc[i][1]
-    if arr[r][c] == 0:
-        total += bfs(r, c)
 
-print (total)
+if n == 1:
+    print(max(arr))
+else:
+    for i in range(k):
+        r, c = rc[i][0], rc[i][1]
+        if arr[r][c] == 0:
+            total += bfs(r, c)
+    print (total)
