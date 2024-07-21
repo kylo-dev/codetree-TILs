@@ -28,7 +28,10 @@ def bfs(x, y):
 total = 0
 
 if n == 1:
-    print(max(arr))
+    if arr[0] == 1:
+        print(0)
+    else: 
+        print(1)
 else:
     for i in range(k):
         r, c = rc[i][0], rc[i][1]
