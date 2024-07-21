@@ -37,4 +37,4 @@ else:
         r, c = rc[i][0], rc[i][1]
         if arr[r][c] == 0:
             total += bfs(r, c)
-    print (total)
+    print(total)
