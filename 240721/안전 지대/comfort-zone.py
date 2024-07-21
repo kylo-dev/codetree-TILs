@@ -26,8 +26,7 @@ for i in range(1, k+1):
             if arr[x][y] > i and not visited[x][y]:
                 dfs(x, y, i, visited)
                 count += 1
-    if count > 0:
-        n_dict[i] = count
+    n_dict[i] = count
 
 max_k, max_count = max(n_dict.items(), key = lambda x: x[1])
 print(max_k, max_count)
