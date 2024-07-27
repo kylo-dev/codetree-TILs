@@ -14,4 +14,4 @@ stair(n)
 if dp[n] == 0:
     print(0)
 else:
-    print(dp[2]%10007)
+    print(dp[n]%10007)
