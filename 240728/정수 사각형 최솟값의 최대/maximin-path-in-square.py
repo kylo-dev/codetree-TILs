@@ -19,7 +19,7 @@ def initial():
     
     # 오른쪽
     for j in range(1, n):
-        dp[0][i] = min(dp[0][i-1], arr[0][i])
+        dp[0][j] = min(dp[0][j-1], arr[0][j])
 
 initial()
 
