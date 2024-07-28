@@ -1,27 +1,28 @@
 n = int(input())
 
-arr = [list(map(int, input().split())) for _ in range(n)]
+num = [
+    list(map(int, input().split()))
+    for _ in range(n)
+]
 
-max_sum = 0
+dp = [
+    [0 for _ in range(n)]
+    for _ in range(n)
+]
 
-def in_range(x, y):
-    return 0 <= x < n and 0 <= y < n
+def initialize():
+    dp[0][0] = num[0][0]
 
-def find_max_sum(x, y, sum):
-    global max_sum
-
-    if x == n - 1 and y == n - 1:
-        max_sum = max(max_sum, sum)
-        return
+    for i in range(1, n):
+        dp[i][0] = dp[i-1][0] + num[i][0]
     
-    dxs, dys = [1, 0], [0, 1]
+    for i in range(1, n):
+        dp[0][i] = dp[0][i-1] + num[0][i]
 
-    for dx, dy in zip(dxs, dys):
-        new_x, new_y = x + dx, y + dy
+initialize()
 
-        if in_range(new_x, new_y):
-            find_max_sum(new_x, new_y, sum + arr[new_x][new_y])
+for i in range(1, n):
+    for j in range(1, n):
+        dp[i][j] = max(dp[i-1][j] + num[i][j], dp[i][j-1] + num[i][j])
 
-find_max_sum(0, 0, arr[0][0])
-
-print(max_sum)
+print(dp[-1][-1])
